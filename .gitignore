@@ -30,3 +30,5 @@
 
 .vs
 obj
+/VS2017/AmiPiePad.vcxproj.user
+/.gitattributes
