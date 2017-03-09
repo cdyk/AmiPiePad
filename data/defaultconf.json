@@ -1,0 +1,11 @@
+{
+  "sources": {
+    "db9": {
+      "name": "retronicdesign"
+    },
+    "xbox": {
+      "name": "Xbox 360"
+    }
+  },
+  "a": [1, 2, 3]
+}

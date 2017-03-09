@@ -66,10 +66,53 @@
   <ItemGroup>
     <ClCompile Include="..\src\main.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\lib\rapidjson\include\rapidjson\allocators.h" />
+    <ClInclude Include="..\lib\rapidjson\include\rapidjson\document.h" />
+    <ClInclude Include="..\lib\rapidjson\include\rapidjson\encodedstream.h" />
+    <ClInclude Include="..\lib\rapidjson\include\rapidjson\encodings.h" />
+    <ClInclude Include="..\lib\rapidjson\include\rapidjson\error\en.h" />
+    <ClInclude Include="..\lib\rapidjson\include\rapidjson\error\error.h" />
+    <ClInclude Include="..\lib\rapidjson\include\rapidjson\filereadstream.h" />
+    <ClInclude Include="..\lib\rapidjson\include\rapidjson\filewritestream.h" />
+    <ClInclude Include="..\lib\rapidjson\include\rapidjson\fwd.h" />
+    <ClInclude Include="..\lib\rapidjson\include\rapidjson\internal\biginteger.h" />
+    <ClInclude Include="..\lib\rapidjson\include\rapidjson\internal\diyfp.h" />
+    <ClInclude Include="..\lib\rapidjson\include\rapidjson\internal\dtoa.h" />
+    <ClInclude Include="..\lib\rapidjson\include\rapidjson\internal\ieee754.h" />
+    <ClInclude Include="..\lib\rapidjson\include\rapidjson\internal\itoa.h" />
+    <ClInclude Include="..\lib\rapidjson\include\rapidjson\internal\meta.h" />
+    <ClInclude Include="..\lib\rapidjson\include\rapidjson\internal\pow10.h" />
+    <ClInclude Include="..\lib\rapidjson\include\rapidjson\internal\regex.h" />
+    <ClInclude Include="..\lib\rapidjson\include\rapidjson\internal\stack.h" />
+    <ClInclude Include="..\lib\rapidjson\include\rapidjson\internal\strfunc.h" />
+    <ClInclude Include="..\lib\rapidjson\include\rapidjson\internal\strtod.h" />
+    <ClInclude Include="..\lib\rapidjson\include\rapidjson\internal\swap.h" />
+    <ClInclude Include="..\lib\rapidjson\include\rapidjson\istreamwrapper.h" />
+    <ClInclude Include="..\lib\rapidjson\include\rapidjson\memorybuffer.h" />
+    <ClInclude Include="..\lib\rapidjson\include\rapidjson\memorystream.h" />
+    <ClInclude Include="..\lib\rapidjson\include\rapidjson\msinttypes\inttypes.h" />
+    <ClInclude Include="..\lib\rapidjson\include\rapidjson\msinttypes\stdint.h" />
+    <ClInclude Include="..\lib\rapidjson\include\rapidjson\ostreamwrapper.h" />
+    <ClInclude Include="..\lib\rapidjson\include\rapidjson\pointer.h" />
+    <ClInclude Include="..\lib\rapidjson\include\rapidjson\prettywriter.h" />
+    <ClInclude Include="..\lib\rapidjson\include\rapidjson\rapidjson.h" />
+    <ClInclude Include="..\lib\rapidjson\include\rapidjson\reader.h" />
+    <ClInclude Include="..\lib\rapidjson\include\rapidjson\schema.h" />
+    <ClInclude Include="..\lib\rapidjson\include\rapidjson\stream.h" />
+    <ClInclude Include="..\lib\rapidjson\include\rapidjson\stringbuffer.h" />
+    <ClInclude Include="..\lib\rapidjson\include\rapidjson\writer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\data\defaultconf.json" />
+  </ItemGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
     <Link>
       <LibraryDependencies>SDL2</LibraryDependencies>
     </Link>
+    <ClCompile>
+      <AdditionalIncludeDirectories>../lib/rapidjson/include/rapidjson;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />
