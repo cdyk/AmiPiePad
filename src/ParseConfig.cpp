@@ -5,8 +5,10 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <unistd.h>
+#include <memory>
 
 #include "ParseConfig.h"
+#include "Source.h"
 
 #include <rapidjson.h>
 #include <document.h>
@@ -36,8 +38,20 @@ namespace {
       std::cerr << "source '" << name << "' already defined.\n";
       return false;
     }
+    if (!root.IsObject()) { std::cerr << "Source '" << name << "' is not an object.\n"; return false; }
 
-    std::cerr << name << "\n";
+
+    std::unique_ptr<Source> src(new Source(name));
+
+    for (auto it = root.MemberBegin(); it != root.MemberEnd(); ++it) {
+      if (std::string(it->name.GetString()) == "device-name") {
+        if (!it->value.IsString()) { std::cerr << "Source '" << name << "' device-name is not a string\n"; return false; }
+        src->setDeviceName(it->value.GetString());
+      }
+
+    }
+
+    context->sources.insert(std::make_pair(name, std::move(src)));
 
     return true;
   }

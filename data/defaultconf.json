@@ -1,10 +1,10 @@
 {
   "sources": {
     "db9": {
-      "name": "retronicdesign"
+      "device-name": "retronicdesign"
     },
     "xbox": {
-      "name": "Xbox 360"
+      "device-name": "Xbox 360"
     }
   },
   "a": [1, 2, 3]
