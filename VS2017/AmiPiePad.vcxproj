@@ -65,6 +65,8 @@
   </PropertyGroup>
   <ItemGroup>
     <ClCompile Include="..\src\main.cpp" />
+    <ClCompile Include="..\src\ParseConfig.cpp" />
+    <ClCompile Include="..\src\Source.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\lib\rapidjson\include\rapidjson\allocators.h" />
@@ -102,6 +104,9 @@
     <ClInclude Include="..\lib\rapidjson\include\rapidjson\stream.h" />
     <ClInclude Include="..\lib\rapidjson\include\rapidjson\stringbuffer.h" />
     <ClInclude Include="..\lib\rapidjson\include\rapidjson\writer.h" />
+    <ClInclude Include="..\src\Context.h" />
+    <ClInclude Include="..\src\ParseConfig.h" />
+    <ClInclude Include="..\src\Source.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\data\defaultconf.json" />
