@@ -7,5 +7,35 @@
       "device-name": "Xbox 360"
     }
   },
-  "a": [1, 2, 3]
+  "sinks": {
+    "mouse1": {
+      "type": "mouse",
+      "gpio-map": {
+        "1-v-pulse": 4,
+        "2-h-pulse": 7,
+        "3-vq-pulse": 8,
+        "4-hq-pulse": 9,
+        "5-button-m": 14,
+        "6-button-l": 10,
+        "9-button-r": 11
+      }
+    },
+    "joy2": {
+      "type": "joystick",
+      "gpio-map": {
+        "1-forward": 15,
+        "2-back": 17,
+        "3-left": 18,
+        "4-right": 22,
+        "6-fire-1": 23,
+        "9-fire-2": 24
+      }
+    }
+  },
+  "configs": [
+    {
+
+    }
+  
+  ]
 }
