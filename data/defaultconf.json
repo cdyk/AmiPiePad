@@ -15,9 +15,18 @@
         "2-h-pulse": 7,
         "3-vq-pulse": 8,
         "4-hq-pulse": 9,
-        "5-button-m": 14,
-        "6-button-l": 10,
-        "9-button-r": 11
+        "6-l-button": 10,
+        "9-r-button": 11
+      }
+    },
+    "joy1": {
+      "type": "joystick",
+      "gpio-map": {
+        "1-forward": 4,
+        "2-back": 7,
+        "3-left": 8,
+        "4-right": 9,
+        "6-fire-1": 10
       }
     },
     "joy2": {
@@ -27,15 +36,53 @@
         "2-back": 17,
         "3-left": 18,
         "4-right": 22,
-        "6-fire-1": 23,
-        "9-fire-2": 24
+        "6-fire-1": 23
       }
     }
   },
-  "configs": [
-    {
+  "mappings": [
 
+    // mouse in port 1 and joystick in port 2 setup.
+    {
+      "mouse1": {
+        "source": "xbox",
+        "h-axis": 0, // left analogue X
+        "v-axis": 1, // left analogue Y
+        "l-button": 9, // left analogue press
+        "r-button": 4 // left shoulder
+      },
+      "joy2": {
+        "source": "xbox",
+        "h-axis": 6, // dpad X
+        "v-axis": 7, // dpad Y
+        "fire-1-button": 0 // A
+      },
+      "meta": {
+        "source": "xbox",
+        "next-mapping-button": [ 6, 5 ] // back + right shoulder
+      }
+    },
+
+    // two player setup, joysticks in both port 1 and 2
+    {
+      "joy1": {
+        "source": "db9",
+        "h-axis": 0,
+        "v-axis": 1,
+        "fire-1-button": 0
+      },
+      "joy2": {
+        "source": "xbox",
+        "h-axis": 6, // dpad X
+        "v-axis": 7, // dpad Y
+        "fire-1-button": 0 // A
+      },
+      "meta": {
+        "source": "xbox",
+        "next-mapping-button": [ 6, 5 ] // back + right shoulder
+      }
     }
-  
+
+
   ]
 }
