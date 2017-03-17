@@ -3,6 +3,8 @@
 #include <iomanip>
 #include "ParseConfig.h"
 #include "Source.h"
+#include "Sink.h"
+#include "Mapping.h"
 
 
 

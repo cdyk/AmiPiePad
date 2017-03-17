@@ -42,7 +42,7 @@ bool Sink::addGPIOMapping(const std::string& key, uint32_t pin)
   return false;
 }
 
-Sink::Index Sink::getAxisIndex(const std::string& name) const
+Index Sink::getAxisIndex(const std::string& name) const
 {
   auto it = axisKeys.find(name);
   if (it != axisKeys.end()) {
@@ -52,7 +52,7 @@ Sink::Index Sink::getAxisIndex(const std::string& name) const
   return invalidIndex;
 }
 
-Sink::Index Sink::getButtonIndex(const std::string& name) const
+Index Sink::getButtonIndex(const std::string& name) const
 {
   auto it = buttonKeys.find(name);
   if (it != buttonKeys.end()) {

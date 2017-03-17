@@ -1,4 +1,5 @@
 #pragma once
+#include "Context.h"
 #include <string>
 #include <vector>
 #include <map>
@@ -6,8 +7,6 @@
 class Sink
 {
 public:
-  typedef uint32_t Index;
-  static const uint32_t invalidIndex = ~0u;
 
   static Sink* factory(const std::string& type, const std::string& name);
 
