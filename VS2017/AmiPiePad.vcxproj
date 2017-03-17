@@ -64,6 +64,8 @@
     <IncludePath>C:\Code\Raspberry\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\Context.cpp" />
+    <ClCompile Include="..\src\GPIOManager.cpp" />
     <ClCompile Include="..\src\main.cpp" />
     <ClCompile Include="..\src\Mapping.cpp" />
     <ClCompile Include="..\src\ParseConfig.cpp" />
@@ -107,6 +109,7 @@
     <ClInclude Include="..\lib\rapidjson\include\rapidjson\stringbuffer.h" />
     <ClInclude Include="..\lib\rapidjson\include\rapidjson\writer.h" />
     <ClInclude Include="..\src\Context.h" />
+    <ClInclude Include="..\src\GPIOManager.h" />
     <ClInclude Include="..\src\Mapping.h" />
     <ClInclude Include="..\src\ParseConfig.h" />
     <ClInclude Include="..\src\Sink.h" />

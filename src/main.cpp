@@ -2,10 +2,6 @@
 #include <iostream>
 #include <iomanip>
 #include "ParseConfig.h"
-#include "Source.h"
-#include "Sink.h"
-#include "Mapping.h"
-
 
 
 void tryAddControllers()
@@ -148,7 +144,6 @@ int main(int argc, char* argv[])
       return rv ? EXIT_SUCCESS : EXIT_FAILURE;
     }
   }
-
 
   Context context;
 

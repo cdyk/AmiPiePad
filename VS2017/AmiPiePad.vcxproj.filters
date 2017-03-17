@@ -6,6 +6,8 @@
     <ClCompile Include="..\src\ParseConfig.cpp" />
     <ClCompile Include="..\src\Sink.cpp" />
     <ClCompile Include="..\src\Mapping.cpp" />
+    <ClCompile Include="..\src\GPIOManager.cpp" />
+    <ClCompile Include="..\src\Context.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="libs">
@@ -138,6 +140,7 @@
     <ClInclude Include="..\src\ParseConfig.h" />
     <ClInclude Include="..\src\Sink.h" />
     <ClInclude Include="..\src\Mapping.h" />
+    <ClInclude Include="..\src\GPIOManager.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\data\defaultconf.json">
