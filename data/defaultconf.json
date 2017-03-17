@@ -10,7 +10,7 @@
   "sinks": {
     "mouse1": {
       "type": "mouse",
-      "gpio-map": {
+      "gpio": {
         "1-v-pulse": 4,
         "2-h-pulse": 7,
         "3-vq-pulse": 8,
@@ -21,7 +21,7 @@
     },
     "joy1": {
       "type": "joystick",
-      "gpio-map": {
+      "gpio": {
         "1-forward": 4,
         "2-back": 7,
         "3-left": 8,
@@ -31,7 +31,7 @@
     },
     "joy2": {
       "type": "joystick",
-      "gpio-map": {
+      "gpio": {
         "1-forward": 15,
         "2-back": 17,
         "3-left": 18,
@@ -55,7 +55,7 @@
         "source": "xbox",
         "h-axis": 6, // dpad X
         "v-axis": 7, // dpad Y
-        "fire-1-button": 0 // A
+        "fire-button": 0 // A
       },
       "meta": {
         "source": "xbox",

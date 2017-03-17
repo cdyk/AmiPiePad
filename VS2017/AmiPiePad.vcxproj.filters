@@ -4,6 +4,7 @@
     <ClCompile Include="..\src\main.cpp" />
     <ClCompile Include="..\src\Source.cpp" />
     <ClCompile Include="..\src\ParseConfig.cpp" />
+    <ClCompile Include="..\src\Sink.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="libs">
@@ -134,6 +135,7 @@
     <ClInclude Include="..\src\Source.h" />
     <ClInclude Include="..\src\Context.h" />
     <ClInclude Include="..\src\ParseConfig.h" />
+    <ClInclude Include="..\src\Sink.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\data\defaultconf.json">
