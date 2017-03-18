@@ -146,5 +146,8 @@
     <None Include="..\data\defaultconf.json">
       <Filter>data</Filter>
     </None>
+    <None Include="..\data\confschema.json">
+      <Filter>data</Filter>
+    </None>
   </ItemGroup>
 </Project>

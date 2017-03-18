@@ -1,0 +1,80 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "definitions": {
+    "integerOrIntegerArray": {
+      "anyOf": [
+        { "type": "string" },
+        {
+          "type": "array",
+          "additionalProperties": { "type": "integer" }
+        }
+      ]
+    }
+  },
+
+  "type": "object",
+  "properties": {
+
+    "sources": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "device-name": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+
+    "sinks": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [ "mouse, joystick" ]
+        },
+        "gpio": {
+          "type": "object",
+          "properties": {
+            "1-v-pulse": { "type": "integer" },
+            "2-h-pulse": { "type": "integer" },
+            "3-vq-pulse": { "type": "integer" },
+            "4-hq-pulse": { "type": "integer" },
+            "6-l-button": { "type": "integer" },
+            "9-r-button": { "type": "integer" },
+            "1-forward": { "type": "integer" },
+            "2-back": { "type": "integer" },
+            "3-left": { "type": "integer" },
+            "4-right": { "type": "integer" },
+            "6-fire-1": { "type": "integer" }
+          },
+          "additionalProperties": false
+        }
+      }
+    },
+
+    "mappings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalItems": {
+          "type": "object",
+          "properties": {
+            "source": { "type": "string" },
+            "h-axis": { "$ref": "#/definitions/integerOrIntegerArray" },
+            "v-axis": { "$ref": "#/definitions/integerOrIntegerArray" },
+            "l-button": { "$ref": "#/definitions/integerOrIntegerArray" },
+            "r-button": { "$ref": "#/definitions/integerOrIntegerArray" },
+            "fire-button": { "$ref": "#/definitions/integerOrIntegerArray" },
+            "fire-1-button": { "$ref": "#/definitions/integerOrIntegerArray" },
+            "next-mapping-button": { "$ref": "#/definitions/integerOrIntegerArray" }
+          },
+          "required": [ "source" ],
+          "additionalProperties": false
+        }
+      }
+    }
+  
+  },
+   "additionalProperties": false
+}

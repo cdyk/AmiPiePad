@@ -7,7 +7,7 @@
 
 Context::Context()
 {
-
+  gpioManager.reset(new GPIOManager());
 }
 
 Context::~Context()

@@ -116,6 +116,7 @@
     <ClInclude Include="..\src\Source.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\data\confschema.json" />
     <None Include="..\data\defaultconf.json" />
   </ItemGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">

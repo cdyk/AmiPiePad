@@ -147,7 +147,7 @@ int main(int argc, char* argv[])
 
   Context context;
 
-  if (!parseConfig(&context, "../../../data/defaultconf.json")) {
+  if (!parseConfig(&context, "../../../data/confschema.json", "../../../data/defaultconf.json")) {
     std::cerr << "Failed to parse config file." << std::endl;
     return 1;
   }
