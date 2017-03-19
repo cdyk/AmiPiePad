@@ -19,9 +19,7 @@ public:
     std::vector<Index> sourceIndices;
   };
 
-  bool addAxisEntry(Context* context, const std::string& sink, const std::string& sinkAxis, const std::string& source, Index sourceAxis);
-
-  bool addButtonEntry(Context* context, const std::string& sink, const std::string& sinkButton, const std::string& source, const std::vector<Index>& sourceButtons);
+  void addEntry(const Entry& entry);
 
 private:
   std::vector<Entry> entries;

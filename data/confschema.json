@@ -20,7 +20,17 @@
       "additionalProperties": {
         "type": "object",
         "properties": {
-          "device-name": { "type": "string" }
+          // Identify controller by requiring substring to be present in controller name.
+          "device-name": { "type": "string" },
+          // Identify controller using a guid (32-character hexadecimal string).
+          "guid": {
+            "type": "string",
+            "pattern": "^[0-9a-fA-f]{32}$"
+          },
+          // Indentify using SDL controller index.
+          "index": {
+            "type": "integer"
+          }
         },
         "additionalProperties": false
       }

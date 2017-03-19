@@ -12,7 +12,9 @@ public:
 
   virtual ~Sink();
 
-  bool addGPIOMapping(const std::string& key, Index pin);
+  Index getGPIOIndex(const std::string& key) const;
+
+  bool setGPIOPin(Index index, Index pin);
 
   const std::string& getName() const { return name; }
 

@@ -26,19 +26,22 @@ Sink::~Sink()
 
 }
 
-bool Sink::addGPIOMapping(const std::string& key, uint32_t pin)
+Index Sink::getGPIOIndex(const std::string& key) const
 {
   for (size_t i = 0; i < GPIOKeys.size(); i++) {
-    if (GPIOKeys[i] == "key") {
-      if (GPIOPins[i] != ~0u) {
-        std::cerr << name << '.' << key << " is already set.\n";
-        return false;
-      }
-      GPIOPins[i] = pin;
-      return true;
+    if (GPIOKeys[i] == key) {
+      return static_cast<Index>(i);
     }
   }
-  std::cerr << name << '.' << key << " does not exist.\n";
+  return invalidIndex;
+}
+
+bool Sink::setGPIOPin(Index index, Index pin)
+{
+  if (index < GPIOPins.size()) {
+    GPIOPins[index] = pin;
+    return true;
+  }
   return false;
 }
 
@@ -48,7 +51,6 @@ Index Sink::getAxisIndex(const std::string& name) const
   if (it != axisKeys.end()) {
     return it->second;
   }
-  std::cerr << "Invalid axis name \"" << name << "\"\n";
   return invalidIndex;
 }
 
@@ -58,7 +60,6 @@ Index Sink::getButtonIndex(const std::string& name) const
   if (it != buttonKeys.end()) {
     return it->second;
   }
-  std::cerr << "Invalid button name \"" << name << "\"\n";
   return invalidIndex;
 }
 
