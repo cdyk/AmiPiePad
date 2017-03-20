@@ -8,6 +8,7 @@
     <ClCompile Include="..\src\Mapping.cpp" />
     <ClCompile Include="..\src\GPIOManager.cpp" />
     <ClCompile Include="..\src\Context.cpp" />
+    <ClCompile Include="..\src\InstanceManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="libs">
@@ -141,6 +142,7 @@
     <ClInclude Include="..\src\Sink.h" />
     <ClInclude Include="..\src\Mapping.h" />
     <ClInclude Include="..\src\GPIOManager.h" />
+    <ClInclude Include="..\src\InstanceManager.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\data\defaultconf.json">

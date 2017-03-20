@@ -12,9 +12,21 @@ public:
 
   void setDeviceName(const std::string& n);
   
+  bool hasDeviceName() const { return deviceNameSet; }
+
+  const std::string& getDeviceName() const { return deviceName; }
+
   void setGUID(const uint8_t* g);
 
-  void setSDLIndex(uint32_t ix);
+  bool hasGUID() const { return guidSet;  }
+
+  const uint8_t* getGUID() const { return guid; }
+
+  void setSDLIndex(unsigned ix);
+
+  bool hasSDLIndex() const { return indexSet; }
+
+  unsigned getSDLIndex() const { return index; }
 
 private:
   std::string name;
@@ -22,7 +34,7 @@ private:
   bool deviceNameSet = false;
   uint8_t guid[16];
   bool guidSet = false;
-  uint32_t index;
+  unsigned index;
   bool indexSet = false;
 
 

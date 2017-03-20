@@ -21,6 +21,8 @@ public:
 
   void addEntry(const Entry& entry);
 
+  const std::vector<Entry>& getEntries() const { return entries; }
+
 private:
   std::vector<Entry> entries;
 

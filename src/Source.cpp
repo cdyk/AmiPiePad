@@ -14,7 +14,7 @@ void Source::setGUID(const uint8_t* g)
   guidSet = true;
 }
 
-void Source::setSDLIndex(uint32_t ix)
+void Source::setSDLIndex(unsigned ix)
 {
   index = ix;
   indexSet = true;

@@ -1,7 +1,9 @@
 #include <SDL2/SDL.h>
 #include <iostream>
 #include <iomanip>
+#include "Context.h"
 #include "ParseConfig.h"
+#include "InstanceManager.h"
 
 
 void tryAddControllers()
@@ -157,7 +159,7 @@ int main(int argc, char* argv[])
     return 1;
   }
 
-  tryAddControllers();
+  context.instanceManager->reset(&context);
 
   bool quit = false;
   while (!quit) {
@@ -174,16 +176,15 @@ int main(int argc, char* argv[])
       break;
 
     case SDL_CONTROLLERDEVICEADDED:
-      tryAddControllers();
+      context.instanceManager->reset(&context);
       break;
 
     case SDL_CONTROLLERDEVICEREMAPPED:
-      purgeControllers(e.cdevice.which);
-      tryAddControllers();
+      context.instanceManager->reset(&context);
       break;
 
     case SDL_CONTROLLERDEVICEREMOVED:
-      purgeControllers(e.cdevice.which);
+      context.instanceManager->reset(&context);
       break;
 
     case SDL_JOYDEVICEADDED:
@@ -195,6 +196,7 @@ int main(int argc, char* argv[])
       std::cerr << "Unhandled event, type=" << std::hex << e.type << std::endl;
     }
   }
+  context.instanceManager->clear(&context);
 
   SDL_Quit();
   return EXIT_SUCCESS;
